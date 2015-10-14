@@ -3,10 +3,11 @@
  * Credits: iqbalhossain at https://github.com/iqbalhossain/
  */
 
-import java.io.*;
-import java.net.*;
-
 import javax.sound.sampled.*;
+import java.io.IOException;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
 
 public class AudioStreamUDP {
 
@@ -205,7 +206,6 @@ class Sender implements Runnable {
             this.cleanUp();
         }
     }
-
 
     private void initializeLine() throws LineUnavailableException {
         DataLine.Info info = new DataLine.Info(TargetDataLine.class, format);
